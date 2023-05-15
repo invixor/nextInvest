@@ -1,0 +1,46 @@
+@import '../source/null.scss';
+
+//----------general----------
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+
+._container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: content-box;
+}
+
+._hidden{
+    display: none;
+}
+
+
+@mixin fontStyle ($fs,$fw,$lh,$clr) {
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $clr;
+}
+
+@mixin flexStyle ($fl, $jc, $ai, $ta) {
+    display: $fl;
+    justify-content: $jc;
+    align-items: $ai;
+    text-align: $ta;
+}
+
+
+$headersColor: #333333;
+$textColor: #999999;
+$accentColor: #128C76;
+
+
+
+//----------/general----------
