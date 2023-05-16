@@ -38,4 +38,8 @@ body {
   color: #272937;
   font-family: "Josefin Sans", sans-serif;
   background: #fff;
+}
+html._lock,
+body._lock {
+  overflow: hidden;
 }/*# sourceMappingURL=null.css.map */
