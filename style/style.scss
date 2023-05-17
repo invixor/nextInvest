@@ -202,3 +202,47 @@ $secondaryColor: #F56B8D;
 
 
 //----------/header----------
+
+
+
+//----------hero----------
+
+.hero {
+    background: url(../img/hero/back.png) center no-repeat;
+    background-size: cover;
+
+    &__container {
+    }
+
+    &__body {
+        padding: 200px 0px 201px 0px;
+    }
+
+    &__title {
+        @include fontStyle(60px, 700, 120%, #fff);
+        margin-bottom: 40px;
+        @media (max-width:1024px){
+            font-size: 40px;
+        }
+    }
+
+    &__text {
+        @include fontStyle(24px, 400, 133.33%, #fff);
+        margin-bottom: 40px;
+        @media (max-width:768px){
+            font-size: 20px;
+        }
+    }
+
+    &__button {
+    }
+}
+
+.green-button {
+}
+
+
+
+
+
+//----------/hero----------

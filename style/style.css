@@ -222,4 +222,36 @@ body._lock {
   color: #F56B8D;
   border: 1px solid #F56B8D;
   background: #fff;
+}
+
+.hero {
+  background: url(../img/hero/back.png) center no-repeat;
+  background-size: cover;
+}
+.hero__body {
+  padding: 200px 0px 201px 0px;
+}
+.hero__title {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 120%;
+  color: #fff;
+  margin-bottom: 40px;
+}
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: 40px;
+  }
+}
+.hero__text {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 133.33%;
+  color: #fff;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .hero__text {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
