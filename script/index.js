@@ -187,6 +187,40 @@ objArray.forEach(item=>{
     offDesc.innerHTML = `${item.description}`;
     offeringsItem.append(offDesc);
 
+    const offProgress = document.createElement("div");
+    offProgress.classList.add('off-item__progress');
+    offProgress.innerHTML = `<progress value = "${item.curInvestment}" max = "${item.maxInvestment}" > <p><span>$${item.curInvestment} raised of $${item.maxInvestment}</span></p>`;
+    offeringsItem.append(offProgress);
+    
+    const offProperties = document.createElement("div");
+    offProperties.classList.add('.item-prop') //need to add hidden class
+    const securityProp = document.createElement("div");
+    securityProp.classList.add('.item-prop__property');
+    securityProp.innerHTML = `<div>Security Type</div> <div>${item.securityType}</div>`;
+    offProperties.append(securityProp);
+    const multProp = document.createElement("div");
+    multProp.classList.add('.item-prop__property');
+    multProp.innerHTML = `<div>Investment Multiple</div> <div>${item.investmentMult}</div>`;
+    offProperties.append(multProp);
+    const matProp = document.createElement("div");
+    matProp.classList.add('.item-prop__property');
+    matProp.innerHTML = `<div>Maturity</div> <div>${item.maturity}</div>`;
+    offProperties.append(matProp);
+    const minProp = document.createElement("div");
+    minProp.classList.add('.item-prop__property');
+    minProp.innerHTML = `<div>Min. Investment</div> <div>$${item.minInvestment}</div>`;
+    offProperties.append(minProp);
+
+    offeringsItem.append(offProperties);
+
+    const offButton = document.createElement("div");
+    offButton.classList.add('off-item__button');
+    offButton.innerHTML = `<button>VIEW</button>`;
+    offeringsItem.append(offButton);
+   
+    
+
+
     offeringList.append(offeringsItem);// objCreateEnd
 })
 
