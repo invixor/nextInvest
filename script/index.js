@@ -27,7 +27,7 @@ const firstObj = {
     tag1: 'HOUSE',
     tag2: 'Family Busines',
     maxInvestment: 1000000,
-    curInvestment: 574920,
+    curInvestment: 922420,
     securityType: 'Revenue Sharing Note',
     investmentMult: '1.4x',
     maturity: 48,
@@ -42,7 +42,7 @@ const firstObj = {
     tag1: 'HOUSE',
     tag2: 'Family Busines',
     maxInvestment: 1000000,
-    curInvestment: 574920,
+    curInvestment: 577356,
     securityType: 'Revenue Sharing Note',
     investmentMult: '1.4x',
     maturity: 48,
@@ -57,7 +57,7 @@ const firstObj = {
     tag1: 'HOUSE',
     tag2: 'Family Busines',
     maxInvestment: 1000000,
-    curInvestment: 574920,
+    curInvestment: 5630,
     securityType: 'Revenue Sharing Note',
     investmentMult: '1.4x',
     maturity: 48,
@@ -72,7 +72,7 @@ const firstObj = {
     tag1: 'HOUSE',
     tag2: 'Family Busines',
     maxInvestment: 1000000,
-    curInvestment: 574920,
+    curInvestment: 12450,
     securityType: 'Revenue Sharing Note',
     investmentMult: '1.4x',
     maturity: 48,
@@ -102,7 +102,7 @@ const firstObj = {
     tag1: 'HOUSE',
     tag2: 'Family Busines',
     maxInvestment: 1000000,
-    curInvestment: 574920,
+    curInvestment: 900433,
     securityType: 'Revenue Sharing Note',
     investmentMult: '1.4x',
     maturity: 48,
@@ -117,7 +117,7 @@ const firstObj = {
     tag1: 'HOUSE',
     tag2: 'Family Busines',
     maxInvestment: 1000000,
-    curInvestment: 574920,
+    curInvestment: 435320,
     securityType: 'Revenue Sharing Note',
     investmentMult: '1.4x',
     maturity: 48,
@@ -132,7 +132,7 @@ const firstObj = {
     tag1: 'HOUSE',
     tag2: 'Family Busines',
     maxInvestment: 1000000,
-    curInvestment: 574920,
+    curInvestment: 53453,
     securityType: 'Revenue Sharing Note',
     investmentMult: '1.4x',
     maturity: 48,
@@ -148,7 +148,7 @@ const firstObj = {
     tag1: 'HOUSE',
     tag2: 'Family Busines',
     maxInvestment: 1000000,
-    curInvestment: 574920,
+    curInvestment: 4920,
     securityType: 'Revenue Sharing Note',
     investmentMult: '1.4x',
     maturity: 48,
@@ -189,25 +189,26 @@ objArray.forEach(item=>{
 
     const offProgress = document.createElement("div");
     offProgress.classList.add('off-item__progress');
-    offProgress.innerHTML = `<progress value = "${item.curInvestment}" max = "${item.maxInvestment}" > <p><span>$${item.curInvestment} raised of $${item.maxInvestment}</span></p>`;
+    offProgress.innerHTML = `<progress value = "${item.curInvestment}" max = "${item.maxInvestment}" ></progress> <p><span>$${item.curInvestment}</span> raised of $${item.maxInvestment}</p>`;
     offeringsItem.append(offProgress);
     
     const offProperties = document.createElement("div");
-    offProperties.classList.add('.item-prop') //need to add hidden class
+    offProperties.classList.add('item-prop');
+    offProperties.classList.add ('_hidden');
     const securityProp = document.createElement("div");
-    securityProp.classList.add('.item-prop__property');
+    securityProp.classList.add('item-prop__property');
     securityProp.innerHTML = `<div>Security Type</div> <div>${item.securityType}</div>`;
     offProperties.append(securityProp);
     const multProp = document.createElement("div");
-    multProp.classList.add('.item-prop__property');
+    multProp.classList.add('item-prop__property');
     multProp.innerHTML = `<div>Investment Multiple</div> <div>${item.investmentMult}</div>`;
     offProperties.append(multProp);
     const matProp = document.createElement("div");
-    matProp.classList.add('.item-prop__property');
+    matProp.classList.add('item-prop__property');
     matProp.innerHTML = `<div>Maturity</div> <div>${item.maturity}</div>`;
     offProperties.append(matProp);
     const minProp = document.createElement("div");
-    minProp.classList.add('.item-prop__property');
+    minProp.classList.add('item-prop__property');
     minProp.innerHTML = `<div>Min. Investment</div> <div>$${item.minInvestment}</div>`;
     offProperties.append(minProp);
 
@@ -215,6 +216,7 @@ objArray.forEach(item=>{
 
     const offButton = document.createElement("div");
     offButton.classList.add('off-item__button');
+    offButton.classList.add('_hidden');
     offButton.innerHTML = `<button>VIEW</button>`;
     offeringsItem.append(offButton);
    
@@ -222,6 +224,35 @@ objArray.forEach(item=>{
 
 
     offeringList.append(offeringsItem);// objCreateEnd
+});
+
+
+offeringsAllItems = document.querySelector('.offerings__list');
+offeringsAllItems.children[6].classList.add('off-item-hidden');
+offeringsAllItems.children[7].classList.add('off-item-hidden');
+offeringsAllItems.children[8].classList.add('off-item-hidden');
+
+const offeringsButton = document.querySelector('.offerings__button');
+const offHiddenItems = document.querySelectorAll('.off-item-hidden');
+offHiddenItems.forEach(item=>{
+  item.classList.add('_hidden');
 })
 
-//--------------/burger--------------------
+if (!offeringsAllItems.children[6].classList.contains('_hidden')){
+  offeringsButton.querySelector('button').textContent = 'VIEW LESS';
+}
+if (offeringsAllItems.children[6].classList.contains('_hidden')){
+  offeringsButton.querySelector('button').textContent = 'VIEW ALL PROJECTS';
+}
+
+offeringsButton.addEventListener('click', ()=>{
+  offHiddenItems.forEach(item=>{
+    item.classList.toggle('_hidden');
+  })
+ 
+});
+
+
+
+
+//--------------/offerings--------------------
