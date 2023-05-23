@@ -471,3 +471,68 @@ $secondaryColor: #F56B8D;
 
 
 //----------/paid----------
+
+//----------growing----------
+
+.growing {
+    background: #fff;
+
+    &__container {
+    }
+
+    &__body {
+        padding: 180px 0px;
+        @include flexStyle(flex, space-between, center, start);
+        gap: 15%;
+        @media (max-width: 1024px){
+            flex-direction: column;
+            padding: 80px 0;
+        }
+        @media (max-width:768px){
+            text-align: center;
+            padding: 50px 0;
+        }
+    }
+
+    &__text {
+    }
+}
+
+.growing-text {
+    @media (max-width: 1024px){
+        margin-bottom: 25px;
+    }
+
+    &__title {
+        @include fontStyle(24px, 400, 133.33%, $textColor);
+        margin-bottom: 40px;
+        @media (max-width:425px){
+            font-size: 20px;
+        }
+        h1{
+            @include fontStyle(48px, 700, 133.33%, $headersColor);
+            margin-bottom: 21px;
+            @media (max-width:425px){
+                font-size: 38px;
+            }
+        }
+    }
+
+    &__button {
+        button{
+            padding: 24px 73px 22px;
+            background: $accentColor;
+            @include fontStyle(16px, 700, 150%, #fff);
+        }
+        
+    }
+}
+
+.growing__img{
+   
+}
+
+
+
+
+//----------/growing----------
