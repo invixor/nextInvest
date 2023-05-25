@@ -536,3 +536,109 @@ $secondaryColor: #F56B8D;
 
 
 //----------/growing----------
+
+
+//----------footer----------
+
+.footer {
+    background:#ECECEC;
+    &__container {
+    }
+
+    &__body {
+        padding: 60px 0;
+    }
+
+    &__menu {
+    }
+
+    &__subscribe {
+    }
+}
+
+.footer-menu {
+    @include flexStyle(flex, space-between, start, start);
+    gap: 130px;
+    margin-bottom: 77px;
+    @media (max-width: 1024px){
+        gap: 50px;
+    }
+    @media (max-width: 768px) {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    &__logo {
+        @include fontStyle(15px, 400, 100%, $headersColor);
+        @media (max-width:768px){
+            flex: 0 0 100%;
+            text-align: center;
+        }
+        h1{
+            margin-bottom: 30px;
+            @include fontStyle(24px, 700, 100%, $headersColor);
+        }
+    }
+
+    &__list {
+        h2{
+            @include fontStyle(18px, 700, 133.33%, $headersColor);
+            margin-bottom: 16px;
+        }
+        a{
+            @include fontStyle(16px, 400, 150%, $headersColor);
+            display: block;
+            &:not(:last-child){
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+.footer-sub {
+    @include flexStyle(flex, space-between, start, start);
+    @media (max-width:768px){
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    h2{
+        @include fontStyle(24px, 400, 150%, $headersColor);
+        margin-bottom: 16px;
+    }
+
+    &__form {
+       
+        input{
+            height: 51px;
+            background: #ECECEC;
+            border-bottom: 1px solid #000000;
+            padding: 15px 0px 10px 12px;
+            @include fontStyle(16px, 400, 150%, $headersColor);
+        }
+        button{
+           height: 51px;
+           padding: 13px 20px;
+           @include fontStyle(24px, 700, 100%, #fff);
+           background: $secondaryColor; 
+           border-radius: 8px 8px 0px 0px;
+           cursor: pointer;
+        }
+    }
+
+    &__social {
+        @media (max-width:768px){
+            padding-bottom: 30px;
+        }
+        transform: translateY(50px);
+        a{
+            &:not(:last-child){
+                margin-right: 40px;
+            }
+        }
+    }
+}
+
+
+
+//----------/footer----------

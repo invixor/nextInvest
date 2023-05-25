@@ -525,4 +525,119 @@ body._lock {
   font-weight: 700;
   line-height: 150%;
   color: #fff;
+}
+
+.footer {
+  background: #ECECEC;
+}
+.footer__body {
+  padding: 60px 0;
+}
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  text-align: start;
+  gap: 130px;
+  margin-bottom: 77px;
+}
+@media (max-width: 1024px) {
+  .footer-menu {
+    gap: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-menu {
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+.footer-menu__logo {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #333333;
+}
+@media (max-width: 768px) {
+  .footer-menu__logo {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+}
+.footer-menu__logo h1 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  color: #333333;
+}
+.footer-menu__list h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 133.33%;
+  color: #333333;
+  margin-bottom: 16px;
+}
+.footer-menu__list a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #333333;
+  display: block;
+}
+.footer-menu__list a:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.footer-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  text-align: start;
+}
+@media (max-width: 768px) {
+  .footer-sub {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer-sub h2 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #333333;
+  margin-bottom: 16px;
+}
+.footer-sub__form input {
+  height: 51px;
+  background: #ECECEC;
+  border-bottom: 1px solid #000000;
+  padding: 15px 0px 10px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #333333;
+}
+.footer-sub__form button {
+  height: 51px;
+  padding: 13px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  color: #fff;
+  background: #F56B8D;
+  border-radius: 8px 8px 0px 0px;
+  cursor: pointer;
+}
+.footer-sub__social {
+  transform: translateY(50px);
+}
+@media (max-width: 768px) {
+  .footer-sub__social {
+    padding-bottom: 30px;
+  }
+}
+.footer-sub__social a:not(:last-child) {
+  margin-right: 40px;
 }/*# sourceMappingURL=style.css.map */
