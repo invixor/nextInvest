@@ -640,4 +640,98 @@ body._lock {
 }
 .footer-sub__social a:not(:last-child) {
   margin-right: 40px;
+}
+
+.modal-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(181, 240, 90, 0.3);
+}
+
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px 25px 0px 25px;
+}
+@media (max-width: 768px) {
+  .modal-window {
+    width: 80%;
+  }
+}
+@media (max-width: 425px) {
+  .modal-window {
+    width: 95%;
+  }
+}
+
+.card {
+  padding: 40px 40px 20px;
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 15px 15px 20px;
+  }
+}
+.card__header {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 121%;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.card__footer {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #999999;
+  text-align: center;
+}
+
+.card-form__item {
+  margin-bottom: 20px;
+}
+.card-form__item h2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 118%;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.card-form__item input {
+  width: 100%;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 118%;
+  color: #999999;
+  padding: 15px 0px 15px 15px;
+}
+.card-form__item input:focus {
+  color: #333333;
+}
+.card-form__button {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+.card-form__button button {
+  background: linear-gradient(91.94deg, #FFA7A7 3.09%, #FF014E 139.14%);
+  border-radius: 9.9625px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 118%;
+  color: #fff;
+  cursor: pointer;
+  padding: 20px 0;
 }/*# sourceMappingURL=style.css.map */

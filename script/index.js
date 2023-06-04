@@ -256,3 +256,56 @@ offeringsButton.addEventListener('click', ()=>{
 
 
 //--------------/offerings--------------------
+
+
+//--------------modals--------------------
+
+const regModal = document.querySelector('#modal-1');
+const logModal = document.querySelector('#modal-2');
+const buttonBlock = document.querySelector('.nav-buttons');
+const logButton = document.querySelector('.green-button');
+const regButton = document.querySelector('.red-button');
+const regForm = document.querySelector('#regForm');
+const logForm = document.querySelector('#logForm');
+let newUser;
+
+class User {
+  constructor(name, email, password){
+    this.name = name;
+    this.email = email;
+    this.password = password;
+  }
+}
+
+
+regButton.addEventListener('click', ()=>{
+  regModal.classList.remove('_hidden');
+  body.classList.add('_lock');
+})
+
+regModal.addEventListener('click', ()=>{
+  regModal.classList.add('_hidden');
+  body.classList.remove('_lock');
+})
+
+regModal.querySelector('.modal-window').addEventListener('click', (e)=>{
+  e.stopPropagation();
+})
+
+regForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  regModal.classList.add('_hidden');
+  logButton.classList.add('_hidden');
+  regButton.classList.add('_hidden');
+  newUser = new User(
+    document.querySelector("#regName").value,
+    document.querySelector("#regEmail").value,
+    document.querySelector("#regPass").value
+  )
+  console.log(newUser);
+  return newUser;
+})
+
+
+
+//--------------/modals--------------------

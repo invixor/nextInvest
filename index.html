@@ -143,7 +143,7 @@
                     </div>
                     <div class="footer__subscribe footer-sub">
                         <div class="footer-sub__form">
-                            <h2></h2>
+                            <h2>Subscribe to our newsletter</h2>
                         <form action="" method="post" id="form-sub">
                             <input type="email" id = "form-email" placeholder="Email address">
                             <button>></button>
@@ -158,6 +158,55 @@
                 </div>
             </div>
         </footer>
+        <div class="modal-block _hidden" data-modal id="modal-1">
+            <div class="modal-window">
+                <div class="card">
+                    <div class="card__header">Let’s go!</div>
+                    <div class="card__form">
+                        <form action="submit" method="post" id="regForm" class="card-form">
+                            <div class="card-form__item">
+                                <h2>Full Name</h2>
+                                <input type="text" name="fullName" id = "regName" placeholder="John Doe" required>
+                            </div>
+                            <div class="card-form__item">
+                                <h2>Email</h2>
+                                <input type="email" name="email" id = "regEmail" placeholder="example@site.com" required>
+                            </div>
+                            <div class="card-form__item">
+                                <h2>Choose Password</h2>
+                                <input type="password" name="password" id = "regPass" placeholder="Minimum 8 characters" minlength="8" maxlength="16" autocomplete="current-password"  required>
+                            </div>
+                            <div class="card-form__button">
+                                <button type="submit">Sign Up</button>
+                            </div>
+                        </form>
+                        <div class="card__footer">By lobby the button above, you agree to our <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-block _hidden" data-modal id="modal-2">
+            <div class="modal-window">
+                <div class="card">
+                    <div class="card__header">Let’s go!</div>
+                    <div class="card__form">
+                        <form action="submit" id = "logForm" method="" class="card-form">
+                            <div class="card-form__item">
+                                <h2>Email</h2>
+                                <input type="email" name="email" placeholder="example@site.com" required>
+                            </div>
+                            <div class="card-form__item">
+                                <h2>Choose Password</h2>
+                                <input type="password" name="password"  placeholder="Minimum 8 characters" minlength="8" maxlength="16" autocomplete="current-password"  required>
+                            </div>
+                            <div class="card-form__button">
+                                <button type="submit">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
