@@ -302,9 +302,21 @@ regForm.addEventListener('submit',(e)=>{
     document.querySelector("#regEmail").value,
     document.querySelector("#regPass").value
   )
-  console.log(newUser);
+  sendData('core/signup.php', newUser);
   return newUser;
-})
+
+});
+
+const sendData = async(url, data) =>{
+  const response = await fetch (url,{
+    method: 'POST',
+    body: JSON.stringify(data),
+  })
+  if (!response.ok) {
+    throw new Error (`Error by ${url}, error status is ${response}`);
+  }
+  return await response.json()
+};
 
 
 

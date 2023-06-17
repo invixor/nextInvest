@@ -1,25 +1,27 @@
 <?php
-require_once 'config.php';
+$data = json_decode(file_get_contents('php://input'), true);
+$name = $data['name'];
+$email = $data['email'];
+$password = $data['password'];
 
-$name = trim($_POST['fullName']);
-$pass = trim($_POST['password']);
-$email = trim($_POST['email']);
+$file = 'data.txt';
+file_put_contents($file, "Name: $name, Email: $email, Password:$password", FILE_APPEND);
+$response = [
+    'message'=>'You are done it right!'
+];
+header('Content-Type: application/json');
+echo json_encode($response);
 
-if ($name =='' OR $pass =='' OR $email == ''){
-    echo "Please fill required fileds";
-    die;
+
+$conn = new mysqli ("localhost", "root", "", "nextinvest");
+if ($conn->connect_error) {
+    die ("Error:". $conn->connect_error);
 }
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$sql = "INSERT INTO nextinvest_users (name, email, password) VALUES ('".$name."', '".$email."', '".$password."')";
+if ($conn-> query($sql)) {
+    echo "Data was successfuly added"
+} else{
+    echo "Error: " . $conn->error;
 }
-
-$sql = "INSERT INTO nextInvest_users (name, email, password) VALUES ('".$name"', '".$email"', '".$pass"')";
-
-if ($conn->query($sql) === FALSE) {
-    echo "Error: ". $sql "<br>" . $conn->error;
-}
-
 $conn->close();
 ?>
