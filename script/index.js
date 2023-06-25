@@ -267,6 +267,7 @@ const logButton = document.querySelector('.green-button');
 const regButton = document.querySelector('.red-button');
 const regForm = document.querySelector('#regForm');
 const logForm = document.querySelector('#logForm');
+let userList;
 let newUser;
 
 class User {
@@ -322,6 +323,39 @@ const sendData = async(url, data) =>{
   return await response.json()
 };
 
+
+const getData = async (url) =>{
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Error by ${url}, error status is ${response}`);
+  }
+  return await response.json();
+};
+
+logButton.addEventListener('click', ()=>{
+  logModal.classList.remove('_hidden');
+  body.classList.add('_lock');
+});
+
+logModal.addEventListener('click', ()=>{
+  logModal.classList.add('_hidden');
+  body.classList.remove('_lock');
+});
+
+logModal.querySelector('.modal-window').addEventListener('click', (e)=>{
+  e.stopPropagation();
+});
+
+
+logForm.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  logModal.classList.add('_hidden');
+  logButton.classList.add('_hidden');
+  regButton.classList.add('_hidden');
+  getData('core/login.php').then((data)=>{
+    userList = data;
+  });
+})
 
 
 //--------------/modals--------------------
