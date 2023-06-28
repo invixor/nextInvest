@@ -31,3 +31,4 @@ if($mysqli->query($sql)){
 }
 
 $mysqli->close();
+?>

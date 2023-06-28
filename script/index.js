@@ -253,6 +253,21 @@ offeringsButton.addEventListener('click', ()=>{
 });
 
 
+const offItems = document.querySelectorAll('.off-item');
+
+offItems.forEach(item=>{
+  item.addEventListener('click', ()=>{
+    
+    if (item.querySelector('.tags').style.display == "none"){
+      item.querySelector('.tags').style.display="flex"
+    } 
+    item.querySelector('.tags').style.display = 'none';
+    item.querySelector('.off-item__pic').classList.toggle('_hidden');
+    item.querySelector('.item-prop').classList.toggle('_hidden');
+    item.querySelector('.off-item__button').classList.toggle('_hidden');
+  })
+})
+
 
 
 //--------------/offerings--------------------
@@ -346,15 +361,39 @@ logModal.querySelector('.modal-window').addEventListener('click', (e)=>{
   e.stopPropagation();
 });
 
-
-logForm.addEventListener('submit', (e)=>{
-  e.preventDefault();
-  logModal.classList.add('_hidden');
-  logButton.classList.add('_hidden');
-  regButton.classList.add('_hidden');
+window.addEventListener('load', ()=>{
   getData('core/login.php').then((data)=>{
     userList = data;
   });
+  return userList;
+})
+
+let emailList = [];
+logButton.addEventListener('click', ()=>{
+  userList.forEach(item=>{
+    emailList.push(item.email);
+   })
+   return emailList;
+});
+
+
+logForm.addEventListener ('submit', (e)=>{
+  e.preventDefault();
+  let userEmail = logForm.querySelector('[name = "email"]').value;
+  let userPass = logForm.querySelector('[name = "password"]').value;
+  let userPos = emailList.indexOf(userEmail);
+
+  if (emailList.includes(userEmail)){
+    if(userPass==userList[userPos].password){
+      logModal.classList.add('_hidden');
+      logButton.classList.add('_hidden');
+      regButton.classList.add('_hidden');
+    } else{
+      alert ('Password is invalid!');
+    }
+  } else {
+    alert ('No such User');
+  }
 })
 
 

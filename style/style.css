@@ -300,6 +300,7 @@ body._lock {
 .off-item {
   box-shadow: 0px 24px 60px rgba(51, 51, 51, 0.16);
   position: relative;
+  transition: all 1s ease;
 }
 .off-item__pic {
   margin-bottom: 24px;
@@ -351,6 +352,11 @@ body._lock {
   color: #128C76;
   font-weight: 700;
 }
+.off-item__button {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 .off-item__button button {
   width: 100%;
   text-align: center;
@@ -361,6 +367,7 @@ body._lock {
   line-height: 150%;
   color: #fff;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .tags {
